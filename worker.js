@@ -42,5 +42,5 @@ router.get("/data/:key", (req, env) => {
 router.all("*", () => new Response("Not found", {status: 404}));
 
 export default {
-    fetch: (request, env, ctx) => router.handle(request, env, ctx),
+    fetch: async (request, env, ctx) => router.handle(request, env, ctx),
 };
