@@ -3,6 +3,4 @@ main = "./worker.js"
 type = "javascript"
 compatibility_date = "2025-11-09"
 
-account_id = "${CF_ACCOUNT_ID}"
-
 workers_dev = true
