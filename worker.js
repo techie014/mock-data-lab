@@ -1,8 +1,8 @@
-import {Router} from "itty-router";
+import {AutoRouter} from "itty-router";
 
 import DATA_MAP from "./data/index.js";
 
-const router = Router();
+const router = AutoRouter();
 
 const json = (obj, status = 200) =>
     new Response(JSON.stringify(obj), {
@@ -39,8 +39,4 @@ router.get("/data/:key", (req, env) => {
     return json(content);
 });
 
-router.all("*", () => new Response("Not found", {status: 404}));
-
-export default {
-    fetch: async (request, env, ctx) => router.handle(request, env, ctx),
-};
+export default {...router};
