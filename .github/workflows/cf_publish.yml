@@ -1,7 +1,5 @@
 on:
   push:
-    branches:
-      - main
     tags:
       - "v*.*.*"
 
@@ -29,6 +27,5 @@ jobs:
         with:
           accountId: ${{ secrets.CF_ACCOUNT_ID }}
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          command: publish
         env:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
