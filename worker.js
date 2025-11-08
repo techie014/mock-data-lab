@@ -26,7 +26,7 @@ function checkAuth(request, env) {
 }
 
 router.get("/data/:key", (req, env) => {
-    const authErr = checkAuth(req.request, env);
+    const authErr = checkAuth(req, env);
     if (authErr) {
         return authErr;
     }
