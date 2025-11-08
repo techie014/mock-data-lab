@@ -1,0 +1,59 @@
+[
+  {
+    "id": 1,
+    "name": "Douglas Adams",
+    "bio": "English author, humorist, and screenwriter, best known for The Hitchhiker's Guide to the Galaxy",
+    "birthDate": "1952-03-11",
+    "nationality": "British"
+  },
+  {
+    "id": 2,
+    "name": "George Orwell",
+    "bio": "English novelist, essayist, journalist and critic, famous for Animal Farm and Nineteen Eighty-Four",
+    "birthDate": "1903-06-25",
+    "nationality": "British"
+  },
+  {
+    "id": 3,
+    "name": "Isaac Asimov",
+    "bio": "American writer and professor of biochemistry, prolific author of science fiction and popular science books",
+    "birthDate": "1920-01-02",
+    "nationality": "American"
+  },
+  {
+    "id": 4,
+    "name": "William Shakespeare",
+    "bio": "English playwright, poet and actor, widely regarded as the greatest writer in the English language",
+    "birthDate": "1564-04-23",
+    "nationality": "British"
+  },
+  {
+    "id": 5,
+    "name": "Terry Pratchett",
+    "bio": "English humorist, satirist, and author of fantasy novels, especially the Discworld series",
+    "birthDate": "1948-04-28",
+    "nationality": "British"
+  },
+  {
+    "id": 6,
+    "name": "Harper Lee",
+    "bio": "American novelist widely known for To Kill a Mockingbird, published in 1960",
+    "birthDate": "1926-04-28",
+    "nationality": "American"
+  },
+  {
+    "id": 7,
+    "name": "Frank Herbert",
+    "bio": "American science fiction author best known for the novel Dune and its five sequels",
+    "birthDate": "1920-10-08",
+    "nationality": "American"
+  },
+  {
+    "id": 8,
+    "name": "F. Scott Fitzgerald",
+    "bio": "American novelist and short story writer, widely regarded as one of the greatest American writers of the 20th century",
+    "birthDate": "1896-09-24",
+    "nationality": "American"
+  }
+]
+
