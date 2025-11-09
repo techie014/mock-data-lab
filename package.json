@@ -1,16 +1,18 @@
 {
-  "name": "mock-data-lab",
-  "version": "1.0.0",
-  "main": "worker.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "techie",
-  "description": "",
-  "dependencies": {
-    "itty-router": "^5.0.22"
-  },
-  "devDependencies": {
-    "prettier": "^3.6.2"
-  }
+	"name": "mock-data-lab",
+	"version": "1.0.0",
+	"main": "worker.js",
+	"scripts": {
+		"dev": "wrangler dev",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "techie",
+	"description": "",
+	"dependencies": {
+		"itty-router": "^5.0.22"
+	},
+	"devDependencies": {
+		"prettier": "^3.6.2",
+		"wrangler": "^4.46.0"
+	}
 }
