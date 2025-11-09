@@ -1,42 +1,58 @@
-import {AutoRouter} from "itty-router";
+import { AutoRouter } from "itty-router";
 
-import DATA_MAP from "./data/index.js";
+import DATA_REGISTRY from "./data";
 
 const router = AutoRouter();
 
-const json = (obj, status = 200) =>
-    new Response(JSON.stringify(obj), {
-        status,
-        headers: {"Content-Type": "application/json"},
-    });
+const json = (data, status = 200) =>
+	new Response(JSON.stringify(data), {
+		status,
+		headers: { "Content-Type": "application/json" },
+	});
 
-const notFound = () => json({error: "not found"}, 404);
-const unauthorized = () => json({error: "unauthorized"}, 401);
+const notFound = (message = "Resource not found") => json({ error: message }, 404);
 
-function checkAuth(request, env) {
-    const auth = (request.headers.get("Authorization") || "").trim();
-    if (!auth.startsWith("Bearer ")) {
-        return unauthorized();
-    }
-    const token = auth.slice(7).trim();
-    if (!env.AUTH_TOKEN || token !== env.AUTH_TOKEN) {
-        return unauthorized();
-    }
-    return null;
+const unauthorized = (message = "Invalid or missing authentication") => json({ error: message }, 401);
+
+function extractBearerToken(req) {
+	const authHeader = req.headers.get("Authorization")?.trim();
+	if (!authHeader?.startsWith("Bearer ")) {
+		return null;
+	}
+	return authHeader.slice(7).trim();
 }
 
-router.get("/data/:key", (req, env) => {
-    const authErr = checkAuth(req, env);
-    if (authErr) {
-        return authErr;
-    }
+function authenticate(req, env) {
+	const token = extractBearerToken(req);
 
-    const {key} = req.params;
-    const content = DATA_MAP[key];
-    if (!content) {
-        return notFound();
-    }
-    return json(content);
+	if (!token) {
+		return unauthorized("Missing Bearer token");
+	}
+
+	if (!env.AUTH_TOKEN) {
+		console.error("AUTH_TOKEN not configured in environment");
+		return json({ error: "Authentication token not configured in environment" }, 500);
+	}
+
+	if (token !== env.AUTH_TOKEN) {
+		return unauthorized("Invalid authentication token");
+	}
+
+	return null;
+}
+
+router.get("/projects/:projectKey/data/:dataKey", (req, env) => {
+	const authError = authenticate(req, env);
+	if (authError) {
+		return authError;
+	}
+
+	const { projectKey, dataKey } = req.params;
+	const data = DATA_REGISTRY?.[projectKey]?.[dataKey];
+	if (!data) {
+		return notFound();
+	}
+	return json(data);
 });
 
-export default {...router};
+export default { ...router };

@@ -5,6 +5,8 @@ on:
 
 jobs:
   publish:
+    name: Deploy to Cloudflare Workers
+
     runs-on: ubuntu-latest
 
     steps:
@@ -13,14 +15,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: 'npm'
 
       - name: Install dependencies
-        run: |
-          if [ -f package-lock.json ]; then
-            npm ci
-          elif [ -f package.json ]; then
-            npm install
-          fi
+        run: npm ci
+        continue-on-error: false
 
       - name: Publish to Cloudflare
         uses: cloudflare/wrangler-action@v3

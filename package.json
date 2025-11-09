@@ -9,5 +9,8 @@
   "description": "",
   "dependencies": {
     "itty-router": "^5.0.22"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
   }
 }

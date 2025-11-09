@@ -1,6 +1,4 @@
 name = "mockdata"
 main = "./worker.js"
-type = "javascript"
 compatibility_date = "2025-11-08"
-
 workers_dev = true
