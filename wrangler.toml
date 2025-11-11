@@ -2,3 +2,8 @@ name = "mockdata"
 main = "./worker.js"
 compatibility_date = "2025-11-08"
 workers_dev = true
+
+[[ratelimits]]
+name="rateLimiter"
+namespace_id="1"
+simple = { limit = 3, period = 10 }

@@ -55,4 +55,13 @@ router.get("/projects/:projectKey/data/:dataKey", (req, env) => {
 	return json(data);
 });
 
-export default { ...router };
+export default {
+	...router,
+	fetch: async (req, env) => {
+		const { success } = await env.rateLimiter.limit({ key: "local" });
+		if (!success) {
+			return new Response(`429 Failure – rate limit exceeded`, { status: 429 });
+		}
+		return router.fetch(req, env);
+	},
+};
