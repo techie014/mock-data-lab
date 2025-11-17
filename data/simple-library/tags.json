@@ -1,103 +1,77 @@
 [
-  {
-    "id": 1,
-    "name": "Classic"
-  },
-  {
-    "id": 2,
-    "name": "Space Opera"
-  },
-  {
-    "id": 3,
-    "name": "Dystopian"
-  },
-  {
-    "id": 4,
-    "name": "Series"
-  },
-  {
-    "id": 5,
-    "name": "Award Winner"
-  },
-  {
-    "id": 6,
-    "name": "Satire"
-  },
-  {
-    "id": 7,
-    "name": "Political"
-  },
-  {
-    "id": 8,
-    "name": "War"
-  },
-  {
-    "id": 9,
-    "name": "Robots"
-  },
-  {
-    "id": 10,
-    "name": "Time Travel"
-  },
-  {
-    "id": 11,
-    "name": "Romance"
-  },
-  {
-    "id": 12,
-    "name": "Revenge"
-  },
-  {
-    "id": 13,
-    "name": "Magic"
-  },
-  {
-    "id": 14,
-    "name": "Fantasy"
-  },
-  {
-    "id": 15,
-    "name": "Discworld"
-  },
-  {
-    "id": 16,
-    "name": "Civil Rights"
-  },
-  {
-    "id": 17,
-    "name": "Coming of Age"
-  },
-  {
-    "id": 18,
-    "name": "Desert Planet"
-  },
-  {
-    "id": 19,
-    "name": "Epic"
-  },
-  {
-    "id": 20,
-    "name": "Jazz Age"
-  },
-  {
-    "id": 21,
-    "name": "Tragedy"
-  },
-  {
-    "id": 22,
-    "name": "Philosophy"
-  },
-  {
-    "id": 23,
-    "name": "Humor"
-  },
-  {
-    "id": 24,
-    "name": "British Literature"
-  },
-  {
-    "id": 25,
-    "name": "American Literature"
-  }
+	{
+		"name": "Classic"
+	},
+	{
+		"name": "Space Opera"
+	},
+	{
+		"name": "Dystopian"
+	},
+	{
+		"name": "Series"
+	},
+	{
+		"name": "Award Winner"
+	},
+	{
+		"name": "Satire"
+	},
+	{
+		"name": "Political"
+	},
+	{
+		"name": "War"
+	},
+	{
+		"name": "Robots"
+	},
+	{
+		"name": "Time Travel"
+	},
+	{
+		"name": "Romance"
+	},
+	{
+		"name": "Revenge"
+	},
+	{
+		"name": "Magic"
+	},
+	{
+		"name": "Fantasy"
+	},
+	{
+		"name": "Discworld"
+	},
+	{
+		"name": "Civil Rights"
+	},
+	{
+		"name": "Coming of Age"
+	},
+	{
+		"name": "Desert Planet"
+	},
+	{
+		"name": "Epic"
+	},
+	{
+		"name": "Jazz Age"
+	},
+	{
+		"name": "Tragedy"
+	},
+	{
+		"name": "Philosophy"
+	},
+	{
+		"name": "Humor"
+	},
+	{
+		"name": "British Literature"
+	},
+	{
+		"name": "American Literature"
+	}
 ]
-

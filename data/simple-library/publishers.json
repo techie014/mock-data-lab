@@ -1,59 +1,50 @@
 [
-  {
-    "id": 1,
-    "name": "Del Rey Books",
-    "country": "United States",
-    "founded": "1977",
-    "website": "https://www.delreybooks.com"
-  },
-  {
-    "id": 2,
-    "name": "Penguin Books",
-    "country": "United Kingdom",
-    "founded": "1935",
-    "website": "https://www.penguin.co.uk"
-  },
-  {
-    "id": 3,
-    "name": "Bantam Spectra",
-    "country": "United States",
-    "founded": "1985",
-    "website": "https://www.bantamdell.com"
-  },
-  {
-    "id": 4,
-    "name": "Simon & Schuster",
-    "country": "United States",
-    "founded": "1924",
-    "website": "https://www.simonandschuster.com"
-  },
-  {
-    "id": 5,
-    "name": "HarperCollins",
-    "country": "United States",
-    "founded": "1989",
-    "website": "https://www.harpercollins.com"
-  },
-  {
-    "id": 6,
-    "name": "J. B. Lippincott & Co.",
-    "country": "United States",
-    "founded": "1836",
-    "website": "https://www.harpercollins.com"
-  },
-  {
-    "id": 7,
-    "name": "Chilton Books",
-    "country": "United States",
-    "founded": "1904",
-    "website": "https://www.penguinrandomhouse.com"
-  },
-  {
-    "id": 8,
-    "name": "Charles Scribner's Sons",
-    "country": "United States",
-    "founded": "1846",
-    "website": "https://www.simonandschuster.com"
-  }
+	{
+		"name": "Del Rey Books",
+		"country": "United States",
+		"founded": "1977",
+		"website": "https://www.delreybooks.com"
+	},
+	{
+		"name": "Penguin Books",
+		"country": "United Kingdom",
+		"founded": "1935",
+		"website": "https://www.penguin.co.uk"
+	},
+	{
+		"name": "Bantam Spectra",
+		"country": "United States",
+		"founded": "1985",
+		"website": "https://www.bantamdell.com"
+	},
+	{
+		"name": "Simon & Schuster",
+		"country": "United States",
+		"founded": "1924",
+		"website": "https://www.simonandschuster.com"
+	},
+	{
+		"name": "HarperCollins",
+		"country": "United States",
+		"founded": "1989",
+		"website": "https://www.harpercollins.com"
+	},
+	{
+		"name": "J. B. Lippincott & Co.",
+		"country": "United States",
+		"founded": "1836",
+		"website": "https://www.harpercollins.com"
+	},
+	{
+		"name": "Chilton Books",
+		"country": "United States",
+		"founded": "1904",
+		"website": "https://www.penguinrandomhouse.com"
+	},
+	{
+		"name": "Charles Scribner's Sons",
+		"country": "United States",
+		"founded": "1846",
+		"website": "https://www.simonandschuster.com"
+	}
 ]
-
