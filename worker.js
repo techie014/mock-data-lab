@@ -1,7 +1,5 @@
 import { AutoRouter } from "itty-router";
 
-import DATA_REGISTRY from "./data";
-
 const router = AutoRouter();
 
 const json = (data, status = 200) =>
@@ -41,19 +39,34 @@ function authenticate(req, env) {
 	return null;
 }
 
-router.get("/projects/:projectKey/data/:dataKey", (req, env) => {
+router.get("/projects/:projectKey/data/:dataKey", async (req, env) => {
 	const authError = authenticate(req, env);
 	if (authError) {
 		return authError;
 	}
 
 	const { projectKey, dataKey } = req.params;
-	const data = DATA_REGISTRY?.[projectKey]?.[dataKey];
-	if (!data) {
-		return notFound();
+
+	try {
+		const assetUrl = new URL(`/${projectKey}/${dataKey}.jsonl`, req.url);
+		const assetResponse = await env.ASSETS.fetch(assetUrl);
+
+		if (!assetResponse.ok) {
+			return notFound(`Data not found for project: ${projectKey}, key: ${dataKey}`);
+		}
+
+		return new Response(assetResponse.body, {
+			headers: {
+				"Content-Type": "application/x-ndjson",
+			},
+		});
+	} catch (error) {
+		console.error("Error fetching JSONL file:", error);
+		return notFound(`Data not found for project: ${projectKey}, key: ${dataKey}`);
 	}
-	return json(data);
 });
+
+router.all("*", () => notFound("Endpoint not found"));
 
 export default {
 	...router,

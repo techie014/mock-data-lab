@@ -3,6 +3,9 @@ main = "./worker.js"
 compatibility_date = "2025-11-08"
 workers_dev = true
 
+# Configure assets - accessible only through worker binding, not directly served
+assets = { directory = "./data", binding = "ASSETS" }
+
 [[ratelimits]]
 name="rateLimiter"
 namespace_id="1"
