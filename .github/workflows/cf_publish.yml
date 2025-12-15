@@ -11,6 +11,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Check if tag commit is on main
+        id: check
+        run: |
+          git fetch origin main
+          git merge-base --is-ancestor "$GITHUB_SHA" origin/main
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -21,18 +29,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
         continue-on-error: false
-        
-      - name: Check if tag commit is on main
-        id: check
-        run: |
-          if git merge-base --is-ancestor "$GITHUB_SHA" origin/main; then
-            echo "is_on_main=true" >> $GITHUB_OUTPUT
-          else
-            echo "is_on_main=false" >> $GITHUB_OUTPUT
-          fi
 
       - name: Publish to Cloudflare
-        if: steps.check.outputs.is_on_main == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           command: deploy
